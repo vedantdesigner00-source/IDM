@@ -1,0 +1,60 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-bg: #f7f4ef;
+  --color-bg2: #ffffff;
+  --color-bg3: #eef2f7;
+  --color-navy: #1a3260;
+  --color-navy2: #243d7a;
+  --color-blue: #2955a3;
+  --color-gold: #c0892a;
+  --color-gold-lt: #e8a83e;
+  --color-gold-bg: #fdf4e7;
+  --color-text: #2b2b3b;
+  --color-muted: #6b7280;
+  --color-border: #dde3ed;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg text-text font-sans overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .nav-logo-circle {
+    @apply w-11 h-11 rounded-full bg-gradient-to-br from-navy to-blue flex items-center justify-center text-white font-serif font-bold text-lg;
+  }
+  
+  .btn-p {
+    @apply bg-gold text-white px-7 py-3 text-[0.84rem] font-semibold tracking-wider uppercase rounded-md transition-all duration-300 hover:bg-gold-lt hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(192,137,42,0.35)];
+  }
+  
+  .btn-o {
+    @apply border-2 border-white/50 text-white px-7 py-2.5 text-[0.84rem] font-medium tracking-wider uppercase rounded-md transition-all duration-300 hover:bg-white/10 hover:border-white;
+  }
+
+  .sec-lbl {
+    @apply flex items-center gap-2.5 text-[0.7rem] tracking-[3px] uppercase text-blue mb-3.5 before:content-[''] before:w-7 before:h-[2px] before:bg-gold;
+  }
+
+  .sec-title {
+    @apply font-serif text-3xl md:text-4xl lg:text-[2.4rem] font-bold text-navy leading-[1.22] mb-4.5;
+  }
+
+  .acard {
+    @apply bg-white border border-border border-l-4 border-l-gold rounded-md p-5.5 shadow-[0_4px_24px_rgba(26,50,96,0.08)] transition-all duration-300 hover:shadow-[0_12px_48px_rgba(26,50,96,0.14)] hover:translate-x-1;
+  }
+
+  .bg-pattern {
+    background-image: radial-gradient(circle, white 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+}
